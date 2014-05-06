@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:annotation-config />	
+
+	<bean id="reportingQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="emc.psasss.fsma.report" />
+	</bean>
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
+	
+	<context:component-scan base-package="com.emc.psasss.tools.fsma.messaging.producer" />
+
+	<bean name="reportingMessagingService"
+		class="com.emc.psasss.tools.fsma.messaging.services.ReportingMessagingService">
+		<property name="messageSender" ref="jsonMessageSender"></property>		
+	</bean>
+
+</beans>

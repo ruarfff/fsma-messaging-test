@@ -1,0 +1,139 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.emc.psasss</groupId>
+	<artifactId>fsma</artifactId>
+	<version>1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>jms-test</name>
+
+	<properties>
+		<spring.version>3.2.8.RELEASE</spring.version>
+		<jstl.version>1.2</jstl.version>
+		<cxf.codegen.plugin>2.6.14</cxf.codegen.plugin>
+		<commons.fileupload.version>1.3.1</commons.fileupload.version>
+		<commons.io.version>2.4</commons.io.version>
+		<maven.replacer.plugin>1.5.3</maven.replacer.plugin>
+		<logback.version>0.9.15</logback.version>
+		<maven.tomcat.plugin>2.0-beta-1</maven.tomcat.plugin>
+		<maven.compiler.plugin>2.5.1</maven.compiler.plugin>
+		<maven.dependency.plugin>2.5.1</maven.dependency.plugin>
+		<maven.war.plugin>2.3</maven.war.plugin>
+		<maven.jarsigner.plugin>1.2</maven.jarsigner.plugin>
+		<maven.assembly.plugin>2.3</maven.assembly.plugin>
+		<org.apache.tiles-version>2.1.3</org.apache.tiles-version>
+		<emma-maven-plugin.version>1.0-alpha-3-SNAPSHOT</emma-maven-plugin.version>
+		<maven-surefire-report-plugin.version>2.17</maven-surefire-report-plugin.version>
+		<maven-failsafe-plugin.version>2.17</maven-failsafe-plugin.version>
+		<activemq-core.version>5.7.0</activemq-core.version>
+		<junit.version>4.11</junit.version>
+		<c3p0.c3p0.version>0.9.1.2</c3p0.c3p0.version>
+		<easymock.version>3.2</easymock.version>
+		<mockito.version>1.9.5</mockito.version>
+		<hamcrest.version>1.3</hamcrest.version>
+	</properties>
+	
+	<dependencies>	
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Messaging -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<type>jar</type>
+			<scope>compile</scope>
+			<version>${activemq-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xbean</groupId>
+			<artifactId>xbean-spring</artifactId>
+			<version>3.7</version>
+		</dependency>
+
+			<!-- Testing -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>${easymock.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>${mockito.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>${hamcrest.version}</version>
+			</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.0-rc1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.0-rc1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+	</dependencies>
+	
+</project>

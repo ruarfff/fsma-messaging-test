@@ -1,2 +1,2 @@
-fsma-messagimg-test
+fsma-messaging-test
 ===================

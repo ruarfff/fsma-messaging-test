@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+		http://activemq.apache.org/schema/core http://activemq.org/config/1.0/1.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<jee:jndi-lookup id="connectionFactory" jndi-name="jms/ConnectionFactory"
+		proxy-interface="javax.jms.ConnectionFactory" expected-type="org.apache.activemq.ActiveMQConnectionFactory"
+		cache="true" lookup-on-startup="true" />
+
+</beans>
