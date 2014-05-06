@@ -8,8 +8,12 @@
 
 	<context:annotation-config />	
 
-	<bean id="reportingQueue" class="org.apache.activemq.command.ActiveMQQueue">
-		<constructor-arg value="emc.psasss.fsma.report" />
+	<bean id="excelReportingQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="emc.psasss.fsma.report.excel" />
+	</bean>
+	
+	<bean id="wordReportingQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="emc.psasss.fsma.report.word" />
 	</bean>
 
 	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">

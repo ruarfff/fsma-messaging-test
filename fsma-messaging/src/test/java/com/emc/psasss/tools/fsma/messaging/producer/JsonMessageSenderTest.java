@@ -32,7 +32,7 @@ public class JsonMessageSenderTest {
 		messageSender.setJmsTemplate(mockJmsTemplate);
 		List<Queue> queues = new ArrayList<Queue>();
 		ActiveMQQueue reportQueue = new ActiveMQQueue(
-				DestinationEnums.FSMA_REPORT.toString());
+				DestinationEnums.FSMA_WORD_REPORT.toString());
 		queues.add(reportQueue);
 		messageSender.setQueues(queues);
 	}
@@ -40,7 +40,7 @@ public class JsonMessageSenderTest {
 	@Test(expected = RuntimeException.class)
 	public void testNoQueue() throws JMSException {
 		messageSender.setQueues(null);
-		messageSender.sendMessage(DestinationEnums.FSMA_REPORT, null);
+		messageSender.sendMessage(DestinationEnums.FSMA_WORD_REPORT, null);
 	}
 
 	@Test
@@ -49,7 +49,7 @@ public class JsonMessageSenderTest {
 				 EasyMock.anyObject(MessageCreator.class));
 		EasyMock.expectLastCall();
 		EasyMock.replay(mockJmsTemplate);
-		messageSender.sendMessage(DestinationEnums.FSMA_REPORT,
+		messageSender.sendMessage(DestinationEnums.FSMA_WORD_REPORT,
 				new ReportingMessage());
 		EasyMock.verify(mockJmsTemplate);
 	}

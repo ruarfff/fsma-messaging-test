@@ -8,7 +8,8 @@
               
 	<!-- Listeners -->
 	<jms:listener-container connection-factory="connectionFactory">
-		<jms:listener destination="emc.psasss.fsma.report" ref="reportingMessageReceiver" method="onMessage" />
+		<jms:listener destination="emc.psasss.fsma.report.excel" ref="reportingMessageReceiver" method="onMessage" />
+		<jms:listener destination="emc.psasss.fsma.report.word" ref="reportingMessageReceiver" method="onMessage" />
 	</jms:listener-container>
 
 

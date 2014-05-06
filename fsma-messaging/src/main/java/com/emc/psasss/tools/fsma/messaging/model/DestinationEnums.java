@@ -18,7 +18,7 @@ public enum DestinationEnums {
 	 * messaging-contexts/messaging-context.xml file (for in memory queues)
 	 */
 
-	FSMA_REPORT("emc.psasss.fsma.report");
+	FSMA_EXCEL_REPORT("emc.psasss.fsma.report.excel"), FSMA_WORD_REPORT("emc.psasss.fsma.report.word");
 
 	/**
 	 * The name/address of the queue we wish to send to

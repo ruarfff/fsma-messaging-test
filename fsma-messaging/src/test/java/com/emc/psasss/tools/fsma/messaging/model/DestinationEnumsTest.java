@@ -13,6 +13,6 @@ import org.junit.Test;
 public class DestinationEnumsTest {
     @Test
     public void testQueueNameRemediation() {
-	TestCase.assertEquals("emc.psasss.fsma.report", DestinationEnums.FSMA_REPORT.toString());
+	TestCase.assertEquals("emc.psasss.fsma.report", DestinationEnums.FSMA_WORD_REPORT.toString());
     }
 }

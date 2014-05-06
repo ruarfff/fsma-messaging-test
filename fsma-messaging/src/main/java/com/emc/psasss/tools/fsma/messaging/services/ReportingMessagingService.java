@@ -30,7 +30,9 @@ public class ReportingMessagingService {
 	public void initiateReport(String name, String uploadedFilePath,
 			String rawDataId) throws Exception {
 		ReportingMessage reportingMessage = new ReportingMessage(name, uploadedFilePath, rawDataId);
-		messageSender.sendMessage(DestinationEnums.FSMA_REPORT,
+		messageSender.sendMessage(DestinationEnums.FSMA_WORD_REPORT,
+				reportingMessage);
+		messageSender.sendMessage(DestinationEnums.FSMA_EXCEL_REPORT,
 				reportingMessage);
 	}
 	
@@ -41,7 +43,9 @@ public class ReportingMessagingService {
 	 * @throws Exception
 	 */
 	public void initiateReport(ReportingMessage reportingMessage) throws Exception {		
-		messageSender.sendMessage(DestinationEnums.FSMA_REPORT,
+		messageSender.sendMessage(DestinationEnums.FSMA_WORD_REPORT,
+				reportingMessage);
+		messageSender.sendMessage(DestinationEnums.FSMA_EXCEL_REPORT,
 				reportingMessage);
 	}
 
